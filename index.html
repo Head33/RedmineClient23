@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendszer Feladatkezelő</title>
+</head>
+<body>
+    <h1>Feladatkezelő Rendszer</h1>
+
+    <div id="projectList">
+        <h2>Elérhető Projektek</h2>
+        <label for="filterType">Szűrés típus szerint:</label>
+        <select id="filterType">
+            <option value="mind">Mind</option>
+            <option value="tipus1">Típus 1</option>
+            <option value="tipus2">Típus 2</option>
+            <!-- további típusok -->
+        </select>
+        <ul id="projects">
+            <li onclick="showTasks(1)">Projekt 1</li>
+            <li onclick="showTasks(2)">Projekt 2</li>
+            <!-- projektek listája dinamikusan generálható -->
+        </ul>
+    </div>
+
+    <div id="taskList" style="display:none;">
+        <h2>Kiválasztott Projekt Feladatok</h2>
+        <ul id="tasks">
+            <!-- projekt feladatok listája itt lesz dinamikusan generálva JavaScript segítségével -->
+        </ul>
+        <button onclick="addTask()">Új feladat hozzáadása</button>
+    </div>
+
+    <div id="createTaskForm" style="display:none;">
+        <h2>Új Feladat Hozzáadása</h2>
+        <label for="taskName">Feladat Neve:</label>
+        <input type="text" id="taskName" required>
+        <label for="taskDescription">Leírás:</label>
+        <textarea id="taskDescription" required></textarea>
+        <label for="assignedDeveloper">Fejlesztő kiválasztása:</label>
+        <select id="assignedDeveloper">
+            <option value="fejleszto1">Fejlesztő 1</option>
+            <option value="fejleszto2">Fejlesztő 2</option>
+            <!-- további fejlesztők -->
+        </select>
+        <button onclick="saveTask()">Mentés</button>
+    </div>
+
+    <script>
+        function showTasks(projectId) {
+            // Projekt alapján feladatok listázása
+            // Példakód, itt történik a projekt alapján feladatok betöltése és megjelenítése
+            document.getElementById("taskList").style.display = "block";
+            // Dinamikus generálás...
+        }
+
+        function addTask() {
+            // Új feladat hozzáadása űrlap megjelenítése
+            document.getElementById("createTaskForm").style.display = "block";
+        }
+
+        function saveTask() {
+            // Új feladat mentése
+            // Példakód, itt történik az új feladat mentése
+            // Majd frissítés a feladatlistán
+        }
+    </script>
+</body>
+</html>
